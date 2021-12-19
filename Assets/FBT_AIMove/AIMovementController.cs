@@ -389,14 +389,19 @@ public class AIMovementController : MonoBehaviour
     {
         if (!agent.pathPending)
         {
-            if (agent.remainingDistance <= agent.stoppingDistance)
-            {
-                if (!agent.hasPath || agent.velocity.sqrMagnitude == 0f)//ここまでチェックポイントに到着したかの判断
-                {
 
-                    return true;
+            if(agent.isOnNavMesh){
+                if (agent.remainingDistance <= agent.stoppingDistance)
+                {
+                    if (!agent.hasPath || agent.velocity.sqrMagnitude == 0f)//ここまでチェックポイントに到着したかの判断
+                    {
+
+                        return true;
+                    }
                 }
             }
+
+
         }
         return false;
     }
